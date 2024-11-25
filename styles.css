@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('bg.png');
+    color: #fff;
+    background-size: cover; /* Ensures the image covers the entire background */
+ 
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff;
+  
+  }
+  
+  #app {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background: #1e1e2f;
+    text-align: center;
+  }
+  
+  .page {
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .page.active {
+    display: block;
+  }
+  
+  input, button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  input {
+    width: 80%;
+    background: #fff;
+    color: #000;
+  }
+  
+  button {
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  #answers button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    background: #3b3b58;
+    transition: background 0.3s ease;
+  }
+  
+  #answers button:hover {
+    background: #55557a;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  #answers button.correct {
+    background: #4caf50; /* Green for correct answers */
+    color: white;
+}
+
+#answers button.incorrect {
+    background: #f44336; /* Red for incorrect answers */
+    color: white;
+}

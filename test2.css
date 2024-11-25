@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('bg.png');
+    color: #fff;
+    background-size: cover; /* Ensures the image covers the entire background */
+ 
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff;
+}
+
+#quiz-container {
+    background-color: #1e1e2f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+#question-container {
+    margin-bottom: 20px;
+}
+
+#question-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-btn {
+    background-color: #3b3b58;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-btn:hover {
+    background-color: #3b3b58;
+}
+
+#result-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Animation for correct answer */
+@keyframes correctAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); background-color: #4CAF50; } /* Green */
+    100% { transform: scale(1); }
+}
+
+/* Animation for incorrect answer */
+@keyframes incorrectAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); background-color: #f44336; } /* Red */
+    100% { transform: scale(1); }
+}
+
+/* Apply the animations */
+.option-btn.correct {
+    animation: correctAnimation 0.5s ease forwards; /* Play correct animation */
+}
+
+.option-btn.incorrect {
+    animation: incorrectAnimation 0.5s ease forwards; /* Play incorrect animation */
+}
+.thank-you-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.thank-you-message.show {
+    opacity: 1; /* Fade in */
+}
